@@ -25,12 +25,18 @@ jobs:
 
       - name: サイトをビルドする
         run: python scripts/build.py
+      - name: 投稿案を生成する
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/gen_posts.py
 
+      - name: 投稿案ページを作る
+        run: python scripts/build_posts.py
       - name: 変更をコミットする
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add content docs keywords.txt
+          git add content docs keywords.posts
           if git diff --staged --quiet; then
             echo "変更なし"
           else
