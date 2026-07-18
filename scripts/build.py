@@ -44,7 +44,8 @@ def md_to_html(md):
             if not in_list:
                 out.append("<ul>")
                 in_list = True
-            out.append(f"<li>{inline(re.sub(r'^[-*]\s+', '', line))}</li>")
+            cleaned = re.sub(r'^[-*]\s+', '', line)
+            out.append(f"<li>{inline(cleaned)}</li>")
             continue
         close_list()
         out.append(f"<p>{inline(line)}</p>")
