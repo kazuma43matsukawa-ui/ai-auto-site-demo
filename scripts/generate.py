@@ -44,6 +44,7 @@ def mark_done(lines, index):
 
 def call_claude(keyword):
     api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    if not api_key:
         sys.exit("ANTHROPIC_API_KEY が設定されていません")
     payload = {
         "model": MODEL,
