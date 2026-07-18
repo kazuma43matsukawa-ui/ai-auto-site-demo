@@ -1,4 +1,4 @@
-name: 記事の自動生成
+name: 記事の自動生成k
 
 on:
   schedule:
