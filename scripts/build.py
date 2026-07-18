@@ -7,7 +7,7 @@ import datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT_DIR = os.path.join(ROOT, "content")
-SITE_DIR = os.path.join(ROOT, "site")
+SITE_DIR = os.path.join(ROOT, "docs")
 SITE_NAME = "地方進出支援・ビジネス・インタープリター"
 SITE_URL = "https://example.com"
 
